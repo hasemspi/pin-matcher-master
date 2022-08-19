@@ -14,16 +14,13 @@ function getgeneratepin() {
     // console.log(getGeneare);
     return getGeneare;
 }
-
 document.getElementById('geGenereate').addEventListener('click', function () {
     const pins = getpin();
     const getValu = document.getElementById('getValue'); //select field
     const getShowValue = getValu.value = pins; //replace the field
-
-    console.log(getShowValue);
-
-
+    // console.log(getShowValue);
 })
+
 document.getElementById('calculator').addEventListener('click', function (event) {
     const number = event.target.innerText;
     const getinput = document.getElementById('InputCal');
@@ -37,14 +34,31 @@ document.getElementById('calculator').addEventListener('click', function (event)
             const reminGit = degi.join('');
             getinput.value = reminGit;
         }
-
     } else {
         const getDatas = getCValue + number;
         getinput.value = getDatas;
     }
+})
 
+document.getElementById('verfiy').addEventListener('click', function () {
+    const getRendom = document.getElementById('getValue');
+    const finalGetReandomValu = getRendom.value;
+    //console.log(finalGetReandomValu);
+    const getCheckingValue = document.getElementById('InputCal');
+    const getChecking = getCheckingValue.value;
+    //console.log(getChecking);
+    //checking code sms
+    const getverfiysms = document.getElementById('verfiymas');
+    const getNotverfiysms = document.getElementById('notferfiymas');
 
+    if (finalGetReandomValu === getChecking) {
 
+        getverfiysms.style.display = 'block';
+        getNotverfiysms.style.display = 'none';
+    } else {
+        getNotverfiysms.style.display = 'block';
+        getverfiysms.style.display = 'none';
+    }
 
 
 })
